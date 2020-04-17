@@ -26,7 +26,7 @@ class OeCorporateCountriesAddressServiceProvider implements ServiceModifierInter
           new Reference('language_manager'),
           new Reference('entity_type.manager'),
           new Reference('entity.repository'),
-          new Reference('sparql_endpoint'),
+          new Reference('oe_corporate_countries.corporate_country_repository'),
         ]);
     }
   }
