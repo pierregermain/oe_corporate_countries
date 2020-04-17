@@ -97,13 +97,13 @@ SPARQL;
    * Returns a mapping between ISO 3166-1 alpha-2 and alpha-3 country codes.
    *
    * @return array
-   *   The alpha-3 codes, keyed by alpha-2.
+   *   The alpha-2 codes, keyed by alpha-3.
    */
   protected function getIsoCodeMappings(): array {
     $filename = drupal_get_path('module', 'oe_corporate_countries') . '/resources/country-code-mappings.json';
     $code_mappings = Json::decode(file_get_contents($filename));
 
-    return is_array($code_mappings) ? array_flip($code_mappings) : [];
+    return is_array($code_mappings) ? $code_mappings : [];
   }
 
 }
