@@ -42,7 +42,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\oe_corporate_countries\\": "./tests/"
+            "Drupal\\Tests\\oe_corporate_countries\\": "./tests/src/"
         }
     },
     "extra": {
