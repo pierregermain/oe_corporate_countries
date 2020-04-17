@@ -1,0 +1,6 @@
+services:
+  oe_corporate_countries_address.event_subscriber:
+    class: Drupal\oe_corporate_countries_address\EventSubscriber\AvailableCountriesSubscriber
+    arguments: ['@oe_corporate_countries.corporate_country_repository']
+    tags:
+      - { name: event_subscriber }
