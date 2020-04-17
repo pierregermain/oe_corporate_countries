@@ -52,9 +52,7 @@ class DeprecatedCorporateCountryConstraintValidator extends ConstraintValidator 
     $info = $this->corporateCountryRepository->getCountryByIsoAlpha2($value);
 
     if (!empty($info) && $info['deprecated']) {
-      $this->context->buildViolation($constraint->message)
-        ->setParameter('%value', $value)
-        ->addViolation();
+      $this->context->addViolation($constraint->message, ['%value' => $value]);
     }
   }
 
