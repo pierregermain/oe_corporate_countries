@@ -43,6 +43,7 @@
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\oe_corporate_countries\\": "./tests/src/",
+            "Drupal\\Tests\\oe_corporate_countries_address\\": "./modules/oe_corporate_countries_address/tests/src/",
             "Drupal\\Tests\\rdf_skos\\": "./build/modules/contrib/rdf_skos/tests/"
         }
     },
