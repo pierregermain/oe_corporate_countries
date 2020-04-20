@@ -33,6 +33,7 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
    * {@inheritdoc}
    */
   public function getCountries(): array {
+    // @todo this function is heavily invoked and should be cached.
     $query = <<<SPARQL
 SELECT DISTINCT ?id, ?iso, ?deprecated
 WHERE {
