@@ -91,6 +91,11 @@ class CountryRepository extends AddressCountryRepository {
   protected function doLoadDefinitions($locale): array {
     $countries = $this->corporateCountryRepository->getCountries();
 
+    // Bail out early if no country information has been returned.
+    if (empty($countries)) {
+      return [];
+    }
+
     /** @var \Drupal\rdf_skos\SkosEntityStorage $storage */
     $storage = $this->entityTypeManager->getStorage('skos_concept');
     $entities = $storage->loadMultiple(array_keys($countries));
