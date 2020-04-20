@@ -42,7 +42,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\oe_corporate_countries\\": "./tests/src/"
+            "Drupal\\Tests\\oe_corporate_countries\\": "./tests/src/",
+            "Drupal\\Tests\\rdf_skos\\": "./build/modules/contrib/rdf_skos/tests/"
         }
     },
     "extra": {
