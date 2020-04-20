@@ -93,7 +93,7 @@ class CountryRepository extends AddressCountryRepository {
 
     /** @var \Drupal\rdf_skos\SkosEntityStorage $storage */
     $storage = $this->entityTypeManager->getStorage('skos_concept');
-    $entities = $storage->loadMultiple(array_keys($countries), ['country']);
+    $entities = $storage->loadMultiple(array_keys($countries));
 
     $definitions = [];
     foreach ($entities as $id => $entity) {
