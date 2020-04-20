@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:atold="http://publications.europa.eu/resource/authority/"
+         xmlns:at="http://publications.europa.eu/ontology/authority/">
+  <skos:ConceptScheme rdf:about="http://publications.europa.eu/resource/authority/country" at:table.id="country" at:table.version.number="20200318-0">
+    <owl:versionInfo>20200318-0</owl:versionInfo>
+    <rdfs:label xml:lang="en">Country</rdfs:label>
+    <at:prefLabel xml:lang="en">Country</at:prefLabel>
+    <skos:prefLabel xml:lang="en">Country</skos:prefLabel>
+  </skos:ConceptScheme>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/ITA" at:deprecated="false" at:protocol.order="EU-12">
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/>
+    <at:authority-code>ITA</at:authority-code>
+    <at:op-code>ITA</at:op-code>
+    <dc:identifier>ITA</dc:identifier>
+    <skos:prefLabel xml:lang="de">Italien</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Italy</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Italie</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Italia</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Itália</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/BEL" at:deprecated="false" at:protocol.order="EU-01">
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/>
+    <at:authority-code>BEL</at:authority-code>
+    <at:op-code>BEL</at:op-code>
+    <dc:identifier>BEL</dc:identifier>
+    <at:start.use>1950-05-09</at:start.use>
+    <skos:prefLabel xml:lang="de">Belgien</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Belgium</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Belgique</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Belgio</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Bélgica</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/ANT" at:deprecated="true">
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/>
+    <at:authority-code>ANT</at:authority-code>
+    <at:op-code>ANT</at:op-code>
+    <dc:identifier>ANT</dc:identifier>
+    <at:start.use>1954-12-29</at:start.use>
+    <at:end.use>2010-10-09</at:end.use>
+    <skos:prefLabel xml:lang="de">Niederländischen Antillen</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Netherlands Antilles</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Antilles néerlandaises</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Antille olandesi</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Antilhas Neerlandesas</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/FQ0" at:deprecated="false">
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/>
+    <at:authority-code>FQ0</at:authority-code>
+    <at:op-code>FQ0</at:op-code>
+    <dc:identifier>FQ0</dc:identifier>
+    <at:start.use>1955-08-05</at:start.use>
+    <skos:prefLabel xml:lang="de">Französischen Süd- und Antarktisgebiete</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">French Southern and Antarctic Lands</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Terres australes et antarctiques françaises</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Terre australi e antartiche francesi</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Terras Austrais e Antárticas Francesas</skos:prefLabel>
+  </skos:Concept>
+</rdf:RDF>
