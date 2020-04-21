@@ -8,25 +8,20 @@ use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\language\Entity\ConfigurableLanguage;
 use Drupal\oe_corporate_countries\CorporateCountryRepositoryInterface;
 use Drupal\rdf_skos\Entity\ConceptInterface;
-use Drupal\Tests\rdf_entity\Kernel\RdfKernelTestBase;
-use Drupal\Tests\rdf_skos\Traits\SkosImportTrait;
+use Drupal\Tests\oe_corporate_countries\Kernel\CorporateCountriesRdfKernelTestBase;
 use PHPUnit\Framework\Constraint\IsInstanceOf;
 
 /**
  * Tests the country repository service.
  */
-class CountryRepositoryTest extends RdfKernelTestBase {
-
-  use SkosImportTrait;
+class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
 
   /**
    * {@inheritdoc}
    */
   public static $modules = [
     'language',
-    'rdf_skos',
     'address',
-    'oe_corporate_countries',
     'oe_corporate_countries_address',
   ];
 
@@ -36,8 +31,6 @@ class CountryRepositoryTest extends RdfKernelTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $base_url = $_ENV['SIMPLETEST_BASE_URL'];
-    $this->import($base_url, $this->sparql, 'phpunit');
     $this->enableGraph('country_test');
 
     $this->installEntitySchema('configurable_language');
@@ -161,28 +154,6 @@ class CountryRepositoryTest extends RdfKernelTestBase {
     // Previous entries are still cached.
     $this->container->set('address.country_repository', NULL);
     $this->container->get('address.country_repository')->getList('en');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function tearDown() {
-    $base_url = $_ENV['SIMPLETEST_BASE_URL'];
-    $this->clear($base_url, $this->sparql, 'phpunit');
-
-    parent::tearDown();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function getTestGraphInfo(string $base_url, string $test): array {
-    return [
-      'country_test' => [
-        'uri' => "http://example.com/country/$test",
-        'data' => "$base_url/modules/custom/oe_corporate_countries/tests/resources/test_countries.rdf",
-      ],
-    ];
   }
 
 }
