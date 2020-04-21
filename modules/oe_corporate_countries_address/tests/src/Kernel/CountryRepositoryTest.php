@@ -31,8 +31,6 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $this->enableGraph('country_test');
-
     $this->installEntitySchema('configurable_language');
     $this->installConfig(['language']);
     // At least one extra language needs to be enabled for translations to work.
