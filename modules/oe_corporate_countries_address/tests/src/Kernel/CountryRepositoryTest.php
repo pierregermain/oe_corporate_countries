@@ -46,7 +46,7 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
     // The test country RDF contains 4 countries, but one is not mapped in the
     // country code mappings file, so only 3 should be returned.
     // When no locale is passed, the English labels are returned.
-    $this->assertEquals([
+    $this->assertSame([
       'BE' => 'Belgium',
       'IT' => 'Italy',
       'AN' => 'Netherlands Antilles',
@@ -54,14 +54,14 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
 
     // Test that the correct translated labels are returned when a specific
     // language is passed.
-    $this->assertEquals([
+    $this->assertSame([
+      'AN' => 'Antille olandesi',
       'BE' => 'Belgio',
       'IT' => 'Italia',
-      'AN' => 'Antille olandesi',
     ], $repository->getList('IT'));
 
     // When the language passed doesn't exist, the English labels are returned.
-    $this->assertEquals([
+    $this->assertSame([
       'BE' => 'Belgium',
       'IT' => 'Italy',
       'AN' => 'Netherlands Antilles',
