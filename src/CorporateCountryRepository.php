@@ -6,11 +6,20 @@ namespace Drupal\oe_corporate_countries;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\rdf_entity\Database\Driver\sparql\ConnectionInterface;
+use Drupal\rdf_entity\Entity\Query\Sparql\SparqlArg;
+use Drupal\rdf_entity\RdfGraphHandlerInterface;
 
 /**
  * A corporate country repository implementation.
  */
 class CorporateCountryRepository implements CorporateCountryRepositoryInterface {
+
+  /**
+   * The graph handler.
+   *
+   * @var \Drupal\rdf_entity\RdfGraphHandlerInterface
+   */
+  protected $graphHandler;
 
   /**
    * The SPARQL database connection.
@@ -22,10 +31,13 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
   /**
    * Instantiates a new CorporateCountryRepository object.
    *
+   * @param \Drupal\rdf_entity\RdfGraphHandlerInterface $graphHandler
+   *   The graph handler service.
    * @param \Drupal\rdf_entity\Database\Driver\sparql\ConnectionInterface $sparql
    *   The SPARQL database connection.
    */
-  public function __construct(ConnectionInterface $sparql) {
+  public function __construct(RdfGraphHandlerInterface $graphHandler, ConnectionInterface $sparql) {
+    $this->graphHandler = $graphHandler;
     $this->sparql = $sparql;
   }
 
@@ -34,8 +46,20 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
    */
   public function getCountries(): array {
     // @todo this function is heavily invoked and should be cached.
+    $graphs = $this->graphHandler->getEntityTypeGraphUrisFlatList('skos_concept');
+    // If no graphs are specified, no countries can be retrieved.
+    if (empty($graphs)) {
+      return [];
+    }
+
+    $from_graphs = '';
+    foreach ($graphs as $graph_uri) {
+      $from_graphs .= sprintf("FROM %s\n", SparqlArg::uri($graph_uri));
+    }
+
     $query = <<<SPARQL
 SELECT DISTINCT ?id, ?authcode, ?deprecated
+$from_graphs
 WHERE {
   ?id <http://www.w3.org/2004/02/skos/core#inScheme> <http://publications.europa.eu/resource/authority/country> .
   ?id a <http://www.w3.org/2004/02/skos/core#Concept> .

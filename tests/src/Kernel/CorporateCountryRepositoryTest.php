@@ -4,25 +4,12 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_corporate_countries\Kernel;
 
-use Drupal\Tests\rdf_entity\Kernel\RdfKernelTestBase;
-use Drupal\Tests\rdf_skos\Traits\SkosImportTrait;
-
 /**
  * Tests the corporate country repository.
  *
  * @coversDefaultClass \Drupal\oe_corporate_countries\CorporateCountryRepository
  */
-class CorporateCountryRepositoryTest extends RdfKernelTestBase {
-
-  use SkosImportTrait;
-
-  /**
-   * {@inheritdoc}
-   */
-  public static $modules = [
-    'rdf_skos',
-    'oe_corporate_countries',
-  ];
+class CorporateCountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
 
   /**
    * Tests the getCountries() method.
@@ -31,27 +18,49 @@ class CorporateCountryRepositoryTest extends RdfKernelTestBase {
    */
   public function testGetCountries(): void {
     $country_repository = $this->container->get('oe_corporate_countries.corporate_country_repository');
-    $corporate_countries = $country_repository->getCountries();
 
-    $this->assertCount(273, $corporate_countries);
-    // Countries not present in the country code mappings are removed.
-    $this->assertArrayNotHasKey('http://publications.europa.eu/resource/authority/country/AFI', $corporate_countries);
+    // Only five countries are available in the configured test graph.
+    $expected = [
+      'http://publications.europa.eu/resource/authority/country/ALA' => [
+        'alpha-2' => 'AX',
+        'authority_code' => 'ALA',
+        'deprecated' => FALSE,
+      ],
+      'http://publications.europa.eu/resource/authority/country/ANT' => [
+        'alpha-2' => 'AN',
+        'authority_code' => 'ANT',
+        'deprecated' => TRUE,
+      ],
+      'http://publications.europa.eu/resource/authority/country/BEL' => [
+        'alpha-2' => 'BE',
+        'authority_code' => 'BEL',
+        'deprecated' => FALSE,
+      ],
+      'http://publications.europa.eu/resource/authority/country/FQ0' => [
+        'alpha-2' => 'TF',
+        'authority_code' => 'FQ0',
+        'deprecated' => FALSE,
+      ],
+      'http://publications.europa.eu/resource/authority/country/ITA' => [
+        'alpha-2' => 'IT',
+        'authority_code' => 'ITA',
+        'deprecated' => FALSE,
+      ],
+    ];
+    $this->assertSame($expected, $country_repository->getCountries());
 
-    $this->assertEquals([
-      'alpha-2' => 'IT',
-      'authority_code' => 'ITA',
+    // Enable another graph, which contains a new country and a duplicate.
+    $this->enableGraph('country_test_extra');
+    // Clear the static cache of the handler.
+    $this->container->get('rdf_skos.sparql.graph_handler')->clearCache();
+
+    // An extra country is now returned.
+    $expected['http://publications.europa.eu/resource/authority/country/ROU'] = [
+      'alpha-2' => 'RO',
+      'authority_code' => 'ROU',
       'deprecated' => FALSE,
-    ], $corporate_countries['http://publications.europa.eu/resource/authority/country/ITA']);
-    $this->assertEquals([
-      'alpha-2' => 'AN',
-      'authority_code' => 'ANT',
-      'deprecated' => TRUE,
-    ], $corporate_countries['http://publications.europa.eu/resource/authority/country/ANT']);
-    $this->assertEquals([
-      'alpha-2' => 'TF',
-      'authority_code' => 'FQ0',
-      'deprecated' => FALSE,
-    ], $corporate_countries['http://publications.europa.eu/resource/authority/country/FQ0']);
+    ];
+    $this->assertSame($expected, $country_repository->getCountries());
   }
 
   /**
@@ -61,11 +70,13 @@ class CorporateCountryRepositoryTest extends RdfKernelTestBase {
    */
   public function testGetDeprecatedCountries(): void {
     $country_repository = $this->container->get('oe_corporate_countries.corporate_country_repository');
-    $deprecated_countries = $country_repository->getDeprecatedCountries();
-
-    $this->assertCount(23, $deprecated_countries);
-    $this->assertArrayHasKey('http://publications.europa.eu/resource/authority/country/ANT', $deprecated_countries);
-    $this->assertArrayNotHasKey('http://publications.europa.eu/resource/authority/country/ITA', $deprecated_countries);
+    $this->assertEquals([
+      'http://publications.europa.eu/resource/authority/country/ANT' => [
+        'alpha-2' => 'AN',
+        'authority_code' => 'ANT',
+        'deprecated' => TRUE,
+      ],
+    ], $country_repository->getDeprecatedCountries());
   }
 
   /**

@@ -1,4 +1,4 @@
 services:
   oe_corporate_countries.corporate_country_repository:
     class: Drupal\oe_corporate_countries\CorporateCountryRepository
-    arguments: ['@sparql_endpoint']
+    arguments: ['@rdf_skos.sparql.graph_handler', '@sparql_endpoint']
