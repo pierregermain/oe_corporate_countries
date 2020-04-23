@@ -48,9 +48,15 @@ abstract class CorporateCountriesRdfKernelTestBase extends RdfKernelTestBase {
    */
   protected function getTestGraphInfo(string $base_url, string $test): array {
     return [
+      // Main set of test countries.
       'country_test' => [
         'uri' => "http://example.com/country/$test",
         'data' => "$base_url/modules/custom/oe_corporate_countries/tests/resources/test_countries.rdf",
+      ],
+      // Extra set of countries, with one duplicate and one new country.
+      'country_test_extra' => [
+        'uri' => "http://example.com/country_extra/$test",
+        'data' => "$base_url/modules/custom/oe_corporate_countries/tests/resources/test_countries_extra.rdf",
       ],
     ];
   }
