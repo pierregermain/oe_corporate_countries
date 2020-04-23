@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\oe_corporate_countries_address\Repository;
 
 use Drupal\address\Repository\CountryRepository as AddressCountryRepository;
+use Drupal\Component\Transliteration\TransliterationInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -38,6 +39,13 @@ class CountryRepository extends AddressCountryRepository {
   protected $entityTypeManager;
 
   /**
+   * The transliteration service.
+   *
+   * @var \Drupal\Component\Transliteration\TransliterationInterface
+   */
+  protected $transliteration;
+
+  /**
    * Creates a CountryRepository instance.
    *
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache
@@ -50,13 +58,16 @@ class CountryRepository extends AddressCountryRepository {
    *   The entity repository.
    * @param \Drupal\oe_corporate_countries\CorporateCountryRepositoryInterface $corporate_country_repository
    *   The corporate country repository.
+   * @param \Drupal\Component\Transliteration\TransliterationInterface $transliteration
+   *   The transliteration service.
    */
-  public function __construct(CacheBackendInterface $cache, LanguageManagerInterface $language_manager, EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository, CorporateCountryRepositoryInterface $corporate_country_repository) {
+  public function __construct(CacheBackendInterface $cache, LanguageManagerInterface $language_manager, EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository, CorporateCountryRepositoryInterface $corporate_country_repository, TransliterationInterface $transliteration) {
     parent::__construct($cache, $language_manager);
 
     $this->entityTypeManager = $entity_type_manager;
     $this->entityRepository = $entity_repository;
     $this->corporateCountryRepository = $corporate_country_repository;
+    $this->transliteration = $transliteration;
   }
 
   /**
@@ -106,7 +117,9 @@ class CountryRepository extends AddressCountryRepository {
       $definitions[$countries[$id]['alpha-2']] = $translation->label();
     }
 
-    asort($definitions);
+    uasort($definitions, function ($a, $b) use ($locale) {
+      return $this->transliteration->transliterate($a, $locale) <=> $this->transliteration->transliterate($b, $locale);
+    });
 
     return $definitions;
   }

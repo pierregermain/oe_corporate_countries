@@ -27,6 +27,7 @@ class OeCorporateCountriesAddressServiceProvider implements ServiceModifierInter
           new Reference('entity_type.manager'),
           new Reference('entity.repository'),
           new Reference('oe_corporate_countries.corporate_country_repository'),
+          new Reference('transliteration'),
         ]);
     }
   }

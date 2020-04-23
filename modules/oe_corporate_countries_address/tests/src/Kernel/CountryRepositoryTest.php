@@ -47,11 +47,11 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
     // country code mappings file, so only 3 should be returned.
     // When no locale is passed, the English labels are returned.
     $this->assertSame([
+      'AX' => 'Åland Islands',
       'BE' => 'Belgium',
       'TF' => 'French Southern and Antarctic Lands',
       'IT' => 'Italy',
       'AN' => 'Netherlands Antilles',
-      'AX' => 'Åland Islands',
     ], $repository->getList());
 
     // Test that the correct translated labels are returned when a specific
@@ -66,11 +66,11 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
 
     // When the language passed doesn't exist, the English labels are returned.
     $this->assertSame([
+      'AX' => 'Åland Islands',
       'BE' => 'Belgium',
       'TF' => 'French Southern and Antarctic Lands',
       'IT' => 'Italy',
       'AN' => 'Netherlands Antilles',
-      'AX' => 'Åland Islands',
     ], $repository->getList('es'));
   }
 
