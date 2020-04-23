@@ -16,7 +16,7 @@ interface CorporateCountryRepositoryInterface {
    *   An associative array of countries information, keyed by SKOS concept ID.
    *   Each entry is an associative array with the following keys:
    *    - alpha-2: the ISO 3166-1 alpha-2 country code.
-   *    - alpha-3: the ISO 3166-1 alpha-3 country code.
+   *    - authority_code: the Publication Office authority country code.
    *    - deprecated: a boolean indicating if the country is deprecated.
    */
   public function getCountries(): array;
@@ -28,7 +28,7 @@ interface CorporateCountryRepositoryInterface {
    *   An associative array of countries information, keyed by SKOS concept ID.
    *   Each entry is an associative array with the following keys:
    *    - alpha-2: the ISO 3166-1 alpha-2 country code.
-   *    - alpha-3: the ISO 3166-1 alpha-3 country code.
+   *    - authority_code: the Publication Office authority country code.
    *    - deprecated: a boolean indicating if the country is deprecated.
    */
   public function getDeprecatedCountries(): array;
@@ -44,7 +44,7 @@ interface CorporateCountryRepositoryInterface {
    *   associative array of country information:
    *    - id: the country SKOS concept ID.
    *    - alpha-2: the ISO 3166-1 alpha-2 country code.
-   *    - alpha-3: the ISO 3166-1 alpha-3 country code.
+   *    - authority_code: the Publication Office authority country code.
    *    - deprecated: a boolean indicating if the country is deprecated.
    */
   public function getCountryByIsoAlpha2(string $alpha2): ?array;

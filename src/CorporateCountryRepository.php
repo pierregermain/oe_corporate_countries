@@ -35,32 +35,30 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
   public function getCountries(): array {
     // @todo this function is heavily invoked and should be cached.
     $query = <<<SPARQL
-SELECT DISTINCT ?id, ?iso, ?deprecated
+SELECT DISTINCT ?id, ?authcode, ?deprecated
 WHERE {
   ?id <http://www.w3.org/2004/02/skos/core#inScheme> <http://publications.europa.eu/resource/authority/country> .
   ?id a <http://www.w3.org/2004/02/skos/core#Concept> .
-  ?id <http://publications.europa.eu/ontology/authority/authority-code> ?iso .
+  ?id <http://publications.europa.eu/ontology/authority/authority-code> ?authcode .
   ?id <http://publications.europa.eu/ontology/authority/deprecated> ?deprecated .
 }
-ORDER BY asc(?iso)
+ORDER BY asc(?authcode)
 SPARQL;
 
     $results = $this->sparql->query($query);
 
-    // Create a mapping between ISO 3166-1 alpha-2 and alpha-3 country codes.
     $code_mappings = $this->getIsoCodeMappings();
-
     $countries = [];
     foreach ($results as $item) {
-      $alpha3 = $item->iso->getValue();
+      $auth_code = $item->authcode->getValue();
       // If no alpha-2 code is present, skip the value.
-      if (!isset($code_mappings[$alpha3])) {
+      if (!isset($code_mappings[$auth_code])) {
         continue;
       }
 
       $countries[$item->id->getUri()] = [
-        'alpha-2' => $code_mappings[$alpha3],
-        'alpha-3' => $alpha3,
+        'alpha-2' => $code_mappings[$auth_code],
+        'authority_code' => $auth_code,
         // The deprecated value is returned as string, so apply the same
         // conversion done in \EasyRdf\Literal\Boolean::isTrue().
         'deprecated' => $item->deprecated->getValue() === 'true' || $item->deprecated->getValue() === '1',
@@ -95,10 +93,10 @@ SPARQL;
   }
 
   /**
-   * Returns a mapping between ISO 3166-1 alpha-2 and alpha-3 country codes.
+   * Returns a mapping between ISO 3166-1 alpha-2 and OP country codes.
    *
    * @return array
-   *   The alpha-2 codes, keyed by alpha-3.
+   *   The alpha-2 codes, keyed by OP authority code.
    */
   protected function getIsoCodeMappings(): array {
     $filename = drupal_get_path('module', 'oe_corporate_countries') . '/resources/country-code-mappings.json';

@@ -80,7 +80,7 @@
   "FIN": "FI",
   "FJI": "FJ",
   "FLK": "FK",
-  "ATF": "TF",
+  "FQ0": "TF",
   "FRA": "FR",
   "FRO": "FO",
   "FSM": "FM",
@@ -270,6 +270,6 @@
   "YUG": "YU",
   "ZAF": "ZA",
   "ZMB": "ZM",
-  "ZAR": "ZR",
+  "ZR0": "ZR",
   "ZWE": "ZW"
 }
