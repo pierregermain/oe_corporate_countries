@@ -51,6 +51,7 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
       'TF' => 'French Southern and Antarctic Lands',
       'IT' => 'Italy',
       'AN' => 'Netherlands Antilles',
+      'AX' => 'Åland Islands',
     ], $repository->getList());
 
     // Test that the correct translated labels are returned when a specific
@@ -58,6 +59,7 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
     $this->assertSame([
       'AN' => 'Antille olandesi',
       'BE' => 'Belgio',
+      'AX' => 'Isole Åland',
       'IT' => 'Italia',
       'TF' => 'Terre australi e antartiche francesi',
     ], $repository->getList('IT'));
@@ -68,6 +70,7 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
       'TF' => 'French Southern and Antarctic Lands',
       'IT' => 'Italy',
       'AN' => 'Netherlands Antilles',
+      'AX' => 'Åland Islands',
     ], $repository->getList('es'));
   }
 

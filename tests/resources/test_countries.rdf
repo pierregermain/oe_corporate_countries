@@ -58,4 +58,16 @@
     <skos:prefLabel xml:lang="it">Terre australi e antartiche francesi</skos:prefLabel>
     <skos:prefLabel xml:lang="pt">Terras Austrais e Antárticas Francesas</skos:prefLabel>
   </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/ALA" at:deprecated="false">
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/>
+    <at:authority-code>ALA</at:authority-code>
+    <at:op-code>ALA</at:op-code>
+    <dc:identifier>ALA</dc:identifier>
+    <at:start.use>1950-05-09</at:start.use>
+    <skos:prefLabel xml:lang="de">Ålandinseln</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Åland Islands</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Îles Åland</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Isole Åland</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Alanda</skos:prefLabel>
+  </skos:Concept>
 </rdf:RDF>
