@@ -117,7 +117,7 @@ class CountryRepository extends AddressCountryRepository {
       $definitions[$countries[$id]['alpha-2']] = $translation->label();
     }
 
-    uasort($definitions, function ($a, $b) use ($locale) {
+    uasort($definitions, function (string $a, string $b) use ($locale): int {
       return $this->transliteration->transliterate($a, $locale) <=> $this->transliteration->transliterate($b, $locale);
     });
 
