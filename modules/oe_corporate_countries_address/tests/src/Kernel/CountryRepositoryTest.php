@@ -43,8 +43,8 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
   public function testGetList(): void {
     $repository = $this->container->get('address.country_repository');
 
-    // The test country RDF contains 4 countries, but one is not mapped in the
-    // country code mappings file, so only 3 should be returned.
+    // The test country RDF contains 5 countries, but one is not mapped in the
+    // country code mappings file, so only 4 should be returned.
     // When no locale is passed, the English labels are returned.
     $this->assertSame([
       'AX' => 'Åland Islands',
