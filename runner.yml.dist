@@ -10,6 +10,9 @@ drupal:
     name: "oe_corporate_countries"
     user: "root"
     password: ""
+  sparql:
+    host: "sparql"
+    port: "8890"
   post_install:
     # Prepare the instance.
     - "./vendor/bin/drush en toolbar -y"
@@ -29,6 +32,16 @@ drupal:
         - "bower_components"
         - "vendor"
         - "${drupal.root}"
+      extension_discovery_scan_tests: TRUE
+      file_private_path: "sites/default/files/private"
+    databases:
+      sparql_default:
+        default:
+          prefix: ""
+          host: ${drupal.sparql.host}
+          port: ${drupal.sparql.port}
+          namespace: 'Drupal\Driver\Database\sparql'
+          driver: 'sparql'
 
 commands:
   drupal:site-setup:

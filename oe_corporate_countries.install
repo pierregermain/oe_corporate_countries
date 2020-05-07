@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for oe_corporate_countries module.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_install().
+ */
+function oe_corporate_countries_install() {
+  if (\Drupal::service('config.installer')->isSyncing()) {
+    return;
+  }
+
+  $country_graph = [
+    'name' => 'country',
+    'uri' => 'http://publications.europa.eu/resource/authority/country',
+  ];
+
+  $config = \Drupal::configFactory()->getEditable('rdf_skos.graphs');
+  $entity_types = $config->get('entity_types');
+  $changed = FALSE;
+
+  foreach (['skos_concept_scheme', 'skos_concept'] as $type) {
+    // Make sure the key exists.
+    if (!isset($entity_types[$type])) {
+      $entity_types[$type] = [];
+    }
+
+    // Find if the country graph is already configured. If not, add it to the
+    // list.
+    $key = array_search($country_graph, $entity_types[$type]);
+    if ($key === FALSE) {
+      $entity_types[$type][] = $country_graph;
+      $changed = TRUE;
+    }
+  }
+
+  // Save the configuration only if graphs were added.
+  if ($changed) {
+    $config->set('entity_types', $entity_types)->save();
+  }
+}

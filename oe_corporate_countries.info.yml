@@ -1,6 +1,9 @@
-name: OpenEuropa template
-description: OpenEuropa Drupal module template.
+name: 'OpenEuropa Corporate countries'
+description: 'Provides integration of EC Corporate countries with Drupal.'
 package: OpenEuropa
 
 type: module
 core: 8.x
+
+dependencies:
+  - rdf_skos:rdf_skos

@@ -1,0 +1,10 @@
+name: 'OpenEuropa Corporate countries address'
+description: 'Provides integration of EC Corporate countries with the address module.'
+package: OpenEuropa
+
+type: module
+core: 8.x
+
+dependencies:
+  - oe_corporate_countries:oe_corporate_countries
+  - address:address

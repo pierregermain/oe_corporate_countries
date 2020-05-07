@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Contains module hooks.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_field_info_alter().
+ *
+ * Adds a constraint to validate the country to the related field types.
+ */
+function oe_corporate_countries_address_field_info_alter(&$info) {
+  // The list of fields that have a country property.
+  $properties = [
+    'address_country' => 'value',
+    'address' => 'country_code',
+  ];
+
+  foreach ($properties as $field => $property) {
+    if (isset($info[$field])) {
+      $info[$field]['constraints']['ComplexData'][$property]['DeprecatedCorporateCountry'] = [];
+    }
+  }
+}
