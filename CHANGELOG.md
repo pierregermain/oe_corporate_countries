@@ -1,8 +1,16 @@
 # Change Log
 
+## [1.0.1](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.1) (2020-05-12)
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/1.0.0-beta1...1.0.1)
+
+**Merged pull requests:**
+
+- OPENEUROPA-0000: Allow rdf\_skos dependency to float upwards. [\#4](https://github.com/openeuropa/oe_corporate_countries/pull/4) ([brummbar](https://github.com/brummbar))
+
 ## [1.0.0-beta1](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.0-beta1) (2020-05-07)
 **Merged pull requests:**
 
+- Update changelog for release 1.0.0-beta1. [\#3](https://github.com/openeuropa/oe_corporate_countries/pull/3) ([brummbar](https://github.com/brummbar))
 - OPENEUROPA-2288: Integrate country vocabulary into address module [\#2](https://github.com/openeuropa/oe_corporate_countries/pull/2) ([brummbar](https://github.com/brummbar))
 - OPENEUROPA-2288: Initialize new module. [\#1](https://github.com/openeuropa/oe_corporate_countries/pull/1) ([22Alexandra](https://github.com/22Alexandra))
 
