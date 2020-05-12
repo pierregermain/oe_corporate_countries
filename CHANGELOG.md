@@ -1,7 +1,7 @@
 # Change Log
 
-## [1.0.1](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.1) (2020-05-12)
-[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/1.0.0-beta1...1.0.1)
+## [1.0.0-beta2](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.0-beta2) (2020-05-12)
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/1.0.0-beta1...1.0.0-beta2)
 
 **Merged pull requests:**
 
