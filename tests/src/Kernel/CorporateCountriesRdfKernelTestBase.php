@@ -4,13 +4,13 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_corporate_countries\Kernel;
 
-use Drupal\Tests\rdf_entity\Kernel\RdfKernelTestBase;
+use Drupal\Tests\sparql_entity_storage\Kernel\SparqlKernelTestBase;
 use Drupal\Tests\rdf_skos\Traits\SkosImportTrait;
 
 /**
  * Abstract class for kernel tests with a test RDF country vocabulary.
  */
-abstract class CorporateCountriesRdfKernelTestBase extends RdfKernelTestBase {
+abstract class CorporateCountriesRdfKernelTestBase extends SparqlKernelTestBase {
 
   use SkosImportTrait;
 
@@ -25,7 +25,7 @@ abstract class CorporateCountriesRdfKernelTestBase extends RdfKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $base_url = $_ENV['SIMPLETEST_BASE_URL'];
@@ -36,7 +36,7 @@ abstract class CorporateCountriesRdfKernelTestBase extends RdfKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public function tearDown() {
+  public function tearDown(): void {
     $base_url = $_ENV['SIMPLETEST_BASE_URL'];
     $this->clear($base_url, $this->sparql, 'phpunit');
 
