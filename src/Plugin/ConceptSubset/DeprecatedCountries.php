@@ -14,16 +14,16 @@ use Drupal\rdf_skos\Plugin\PredicateMapperInterface;
  * Creates a subset of the countries vocabulary.
  *
  * @ConceptSubset(
- *   id = "corporate_countries",
- *   label = @Translation("Corporate Countries"),
- *   description = @Translation("Only includes corporate countries."),
+ *   id = "deprecated_countries",
+ *   label = @Translation("Deprecated countries"),
+ *   description = @Translation("Filters out deprecated countries."),
  *   predicate_mapping = TRUE,
  *   concept_schemes = {
  *     "http://publications.europa.eu/resource/authority/country"
  *   }
  * )
  */
-class CorporateCountries extends ConceptSubsetPluginBase implements PredicateMapperInterface {
+class DeprecatedCountries extends ConceptSubsetPluginBase implements PredicateMapperInterface {
 
   /**
    * {@inheritdoc}

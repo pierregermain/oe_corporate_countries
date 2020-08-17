@@ -5,7 +5,7 @@ namespace Drupal\Tests\oe_corporate_countries\Kernel;
 use Drupal\Tests\rdf_skos\Traits\SkosEntityReferenceTrait;
 
 /**
- * Tests the corporate countries concept subset.
+ * Tests the corporate countries concept subsets.
  */
 class CorporateCountrySubsetTest extends CorporateCountriesRdfKernelTestBase {
 
@@ -27,9 +27,9 @@ class CorporateCountrySubsetTest extends CorporateCountriesRdfKernelTestBase {
   }
 
   /**
-   * Tests the corporate country subset filters deprecated countries.
+   * Tests the deprecated country concept subset.
    */
-  public function testCorporateCountryConceptSubset(): void {
+  public function testDeprecatedCountryConceptSubset(): void {
     // Create a country reference field without the subset.
     $this->createSkosConceptReferenceField(
       'entity_test',
@@ -54,7 +54,7 @@ class CorporateCountrySubsetTest extends CorporateCountriesRdfKernelTestBase {
     // Update the field to use the corporate countries concept subset.
     $reference_field = $entity_type_manager->getStorage('field_config')->load('entity_test.entity_test.field_country');
     $handler_settings = $reference_field->getSetting('handler_settings');
-    $handler_settings['concept_subset'] = 'corporate_countries';
+    $handler_settings['concept_subset'] = 'deprecated_countries';
     $reference_field->setSetting('handler_settings', $handler_settings);
     $reference_field->save();
 
