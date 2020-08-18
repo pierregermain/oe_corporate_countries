@@ -11,11 +11,11 @@ use Drupal\rdf_skos\ConceptSubsetPluginBase;
 use Drupal\rdf_skos\Plugin\PredicateMapperInterface;
 
 /**
- * Creates a subset of the countries vocabulary.
+ * Subset of the countries vocabulary with non-deprecated countries only.
  *
  * @ConceptSubset(
- *   id = "deprecated_countries",
- *   label = @Translation("Deprecated countries"),
+ *   id = "non_deprecated_countries",
+ *   label = @Translation("Non-deprecated countries"),
  *   description = @Translation("Filters out deprecated countries."),
  *   predicate_mapping = TRUE,
  *   concept_schemes = {
@@ -23,13 +23,13 @@ use Drupal\rdf_skos\Plugin\PredicateMapperInterface;
  *   }
  * )
  */
-class DeprecatedCountries extends ConceptSubsetPluginBase implements PredicateMapperInterface {
+class NonDeprecatedCountries extends ConceptSubsetPluginBase implements PredicateMapperInterface {
 
   /**
    * {@inheritdoc}
    */
   public function alterQuery(QueryInterface $query, $match_operator, array $concept_schemes = [], string $match = NULL): void {
-    $query->condition('deprecated', 'false');
+    $query->condition('deprecated', ['false', '0'], 'IN');
   }
 
   /**
