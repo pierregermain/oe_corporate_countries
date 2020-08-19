@@ -6,6 +6,7 @@ namespace Drupal\oe_corporate_countries\Plugin\ConceptSubset;
 
 use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\rdf_entity\RdfFieldHandlerInterface;
 use Drupal\rdf_skos\ConceptSubsetPluginBase;
 use Drupal\rdf_skos\Plugin\PredicateMapperInterface;
@@ -24,6 +25,8 @@ use Drupal\rdf_skos\Plugin\PredicateMapperInterface;
  * )
  */
 class NonDeprecatedCountries extends ConceptSubsetPluginBase implements PredicateMapperInterface {
+
+  use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
@@ -54,8 +57,8 @@ class NonDeprecatedCountries extends ConceptSubsetPluginBase implements Predicat
     $fields = [];
 
     $fields['deprecated'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Deprecated'))
-      ->setDescription(t('Whether the country is deprecated or not.'))
+      ->setLabel($this->t('Deprecated'))
+      ->setDescription($this->t('Whether the country is deprecated or not.'))
       ->setCardinality(1);
 
     return $fields;
