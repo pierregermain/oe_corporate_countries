@@ -7,9 +7,9 @@ namespace Drupal\oe_corporate_countries\Plugin\ConceptSubset;
 use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\rdf_entity\RdfFieldHandlerInterface;
 use Drupal\rdf_skos\ConceptSubsetPluginBase;
 use Drupal\rdf_skos\Plugin\PredicateMapperInterface;
+use Drupal\sparql_entity_storage\SparqlEntityStorageFieldHandlerInterface;
 
 /**
  * Subset of the countries vocabulary with non-deprecated countries only.
@@ -44,7 +44,7 @@ class NonDeprecatedCountries extends ConceptSubsetPluginBase implements Predicat
     $mapping['deprecated'] = [
       'column' => 'value',
       'predicate' => ['http://publications.europa.eu/ontology/authority/deprecated'],
-      'format' => RdfFieldHandlerInterface::NON_TYPE,
+      'format' => SparqlEntityStorageFieldHandlerInterface::NON_TYPE,
     ];
 
     return $mapping;

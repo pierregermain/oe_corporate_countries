@@ -16,6 +16,8 @@ class CorporateCountrySubsetTest extends CorporateCountriesRdfKernelTestBase {
    */
   public static $modules = [
     'oe_corporate_countries',
+    'entity_test',
+    'user',
   ];
 
   /**
@@ -23,6 +25,10 @@ class CorporateCountrySubsetTest extends CorporateCountriesRdfKernelTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
+
+    $this->installEntitySchema('entity_test');
+    $this->installEntitySchema('user');
+
     $this->enableGraph('country_test');
   }
 
