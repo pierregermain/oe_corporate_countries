@@ -7,10 +7,26 @@
 
 declare(strict_types = 1);
 
+use Drupal\Core\Field\BaseFieldDefinition;
+
 /**
  * Implements hook_install().
  */
 function oe_corporate_countries_install() {
+  // Install the newly defined SKOS Concept defined fields.
+  /** @var \Drupal\rdf_skos\SkosEntityDefinitionUpdateManager $update_manager */
+  $update_manager = \Drupal::service('rdf_skos.skos_entity_definition_update_manager');
+  $definitions = [];
+  $definitions['deprecated'] = BaseFieldDefinition::create('string')
+    ->setLabel(t('Deprecated'))
+    ->setDescription(t('Whether the country is deprecated or not.'))
+    ->setCardinality(1)
+    ->setProvider('rdf_skos');
+
+  $installed = $update_manager->installFieldDefinitions('skos_concept', $definitions);
+  \Drupal::logger('oe_corporate_countries')->info('The following SKOS field definitions have been installed: @definitions.', ['@definitions' => implode(', ', $installed)]);
+
+  // Bail out if we are installing from config.
   if (\Drupal::service('config.installer')->isSyncing()) {
     return;
   }
