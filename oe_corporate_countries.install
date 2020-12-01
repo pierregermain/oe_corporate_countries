@@ -20,8 +20,7 @@ function oe_corporate_countries_install() {
   $definition = BaseFieldDefinition::create('string')
     ->setLabel(t('Deprecated'))
     ->setDescription(t('Whether the country is deprecated or not.'))
-    ->setCardinality(1)
-    ->setProvider('rdf_skos');
+    ->setCardinality(1);
 
   $manager->installFieldStorageDefinition('deprecated', 'skos_concept', 'rdf_skos', $definition);
   \Drupal::logger('oe_content')->info('The following SKOS field definition has been installed: @definition.', ['@definition' => 'deprecated']);
@@ -78,8 +77,7 @@ function oe_corporate_countries_update_8101(): TranslatableMarkup {
   $definition = BaseFieldDefinition::create('string')
     ->setLabel(t('Deprecated'))
     ->setDescription(t('Whether the country is deprecated or not.'))
-    ->setCardinality(1)
-    ->setProvider('rdf_skos');
+    ->setCardinality(1);
 
   $manager->installFieldStorageDefinition('deprecated', 'skos_concept', 'rdf_skos', $definition);
 
