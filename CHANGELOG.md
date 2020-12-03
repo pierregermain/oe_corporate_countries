@@ -1,11 +1,21 @@
 # Changelog
 
+## [1.0.0-beta4](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.0-beta4) (2020-12-03)
+
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/1.0.0-beta3...1.0.0-beta4)
+
+**Merged pull requests:**
+
+- EWPP-564: Installing the newly created SKOS field definitions. [\#11](https://github.com/openeuropa/oe_corporate_countries/pull/11) ([upchuk](https://github.com/upchuk))
+- EWPP-516: Update docker images. [\#10](https://github.com/openeuropa/oe_corporate_countries/pull/10) ([22Alexandra](https://github.com/22Alexandra))
+
 ## [1.0.0-beta3](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.0-beta3) (2020-08-19)
 
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/1.0.0-beta2...1.0.0-beta3)
 
 **Merged pull requests:**
 
+- Release 1.0.0-beta3: Update changelog. [\#9](https://github.com/openeuropa/oe_corporate_countries/pull/9) ([imanoleguskiza](https://github.com/imanoleguskiza))
 - EWPP-176: Add concept subset for countries vocabulary. [\#8](https://github.com/openeuropa/oe_corporate_countries/pull/8) ([imanoleguskiza](https://github.com/imanoleguskiza))
 
 ## [1.0.0-beta2](https://github.com/openeuropa/oe_corporate_countries/tree/1.0.0-beta2) (2020-05-12)
