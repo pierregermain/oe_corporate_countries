@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\oe_corporate_countries;
 
 use Drupal\Component\Serialization\Json;
-use Drupal\sparql_entity_storage\Database\Driver\sparql\ConnectionInterface;
+use Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface;
 use Drupal\sparql_entity_storage\Entity\Query\Sparql\SparqlArg;
 use Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface;
 
@@ -24,7 +24,7 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
   /**
    * The SPARQL database connection.
    *
-   * @var \Drupal\sparql_entity_storage\Database\Driver\sparql\ConnectionInterface
+   * @var \Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface
    */
   protected $sparql;
 
@@ -33,7 +33,7 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
    *
    * @param \Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface $graphHandler
    *   The graph handler service.
-   * @param \Drupal\sparql_entity_storage\Database\Driver\sparql\ConnectionInterface $sparql
+   * @param \Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface $sparql
    *   The SPARQL database connection.
    */
   public function __construct(SparqlEntityStorageGraphHandlerInterface $graphHandler, ConnectionInterface $sparql) {
