@@ -6,12 +6,12 @@ namespace Drupal\Tests\oe_corporate_countries_address\Kernel;
 
 use CommerceGuys\Addressing\Country\CountryRepositoryInterface;
 use Drupal\oe_corporate_countries_address\Repository\CountryRepository;
-use Drupal\Tests\rdf_entity\Kernel\RdfKernelTestBase;
+use Drupal\Tests\sparql_entity_storage\Kernel\SparqlKernelTestBase;
 
 /**
  * Tests the country repository service override.
  */
-class CountryRepositoryOverrideTest extends RdfKernelTestBase {
+class CountryRepositoryOverrideTest extends SparqlKernelTestBase {
 
   /**
    * {@inheritdoc}

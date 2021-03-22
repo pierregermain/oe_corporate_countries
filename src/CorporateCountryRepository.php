@@ -5,9 +5,9 @@ declare(strict_types = 1);
 namespace Drupal\oe_corporate_countries;
 
 use Drupal\Component\Serialization\Json;
-use Drupal\rdf_entity\Database\Driver\sparql\ConnectionInterface;
-use Drupal\rdf_entity\Entity\Query\Sparql\SparqlArg;
-use Drupal\rdf_entity\RdfGraphHandlerInterface;
+use Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface;
+use Drupal\sparql_entity_storage\Entity\Query\Sparql\SparqlArg;
+use Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface;
 
 /**
  * A corporate country repository implementation.
@@ -17,26 +17,26 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
   /**
    * The graph handler.
    *
-   * @var \Drupal\rdf_entity\RdfGraphHandlerInterface
+   * @var \Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface
    */
   protected $graphHandler;
 
   /**
    * The SPARQL database connection.
    *
-   * @var \Drupal\rdf_entity\Database\Driver\sparql\ConnectionInterface
+   * @var \Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface
    */
   protected $sparql;
 
   /**
    * Instantiates a new CorporateCountryRepository object.
    *
-   * @param \Drupal\rdf_entity\RdfGraphHandlerInterface $graphHandler
+   * @param \Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface $graphHandler
    *   The graph handler service.
-   * @param \Drupal\rdf_entity\Database\Driver\sparql\ConnectionInterface $sparql
+   * @param \Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface $sparql
    *   The SPARQL database connection.
    */
-  public function __construct(RdfGraphHandlerInterface $graphHandler, ConnectionInterface $sparql) {
+  public function __construct(SparqlEntityStorageGraphHandlerInterface $graphHandler, ConnectionInterface $sparql) {
     $this->graphHandler = $graphHandler;
     $this->sparql = $sparql;
   }

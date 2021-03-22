@@ -26,7 +26,7 @@ This depends on the following software:
 
 ## Installation
 
-This module indirectly depends on the [drupal/rdf_entity](https://www.drupal.org/project/rdf_entity) module, which requires a more updated version of `easyrdf/easyrdf` package.\
+This module indirectly depends on the [drupal/sparql_entity_storage](https://www.drupal.org/project/sparql_entity_storage) module, which requires a more updated version of `easyrdf/easyrdf` package.\
 First the correct version of this package should be installed:
 
 ```bash
