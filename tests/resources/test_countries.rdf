@@ -70,4 +70,16 @@
     <skos:prefLabel xml:lang="it">Isole Åland</skos:prefLabel>
     <skos:prefLabel xml:lang="pt">Alanda</skos:prefLabel>
   </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/1A0" at:deprecated="false">
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/>
+    <at:authority-code>1A0</at:authority-code>
+    <at:op-code>1A0</at:op-code>
+    <dc:identifier>1A0</dc:identifier>
+    <at:start.use>2008-02-17</at:start.use>
+    <skos:prefLabel xml:lang="de">Kosovo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Kosovo</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Kosovo</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Kosovo</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Kosovo</skos:prefLabel>
+  </skos:Concept>
 </rdf:RDF>
