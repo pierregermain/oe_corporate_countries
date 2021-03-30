@@ -21,6 +21,11 @@ class CorporateCountryRepositoryTest extends CorporateCountriesRdfKernelTestBase
 
     // Only five countries are available in the configured test graph.
     $expected = [
+      'http://publications.europa.eu/resource/authority/country/1A0' => [
+        'alpha-2' => 'XK',
+        'authority_code' => '1A0',
+        'deprecated' => FALSE,
+      ],
       'http://publications.europa.eu/resource/authority/country/ALA' => [
         'alpha-2' => 'AX',
         'authority_code' => 'ALA',
