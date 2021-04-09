@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0-alpha2](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha2) (2021-04-09)
+
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha1...2.0.0-alpha2)
+
+**Merged pull requests:**
+
+- EWPP-937: Add Kosovo to the list of countries. [\#17](https://github.com/openeuropa/oe_corporate_countries/pull/17) ([sergepavle](https://github.com/sergepavle))
+
 ## [2.0.0-alpha1](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha1) (2021-03-22)
 
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/1.0.0-beta4...2.0.0-alpha1)
