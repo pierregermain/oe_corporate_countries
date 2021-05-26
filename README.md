@@ -131,6 +131,23 @@ Then:
 
 ```bash
 docker-compose exec web composer install
+```
+
+**Please note:** project files and directories are symlinked within the test site by using the
+[OpenEuropa Task Runner's Drupal project symlink](https://github.com/openeuropa/task-runner-drupal-project-symlink) command.
+
+If you add a new file or directory in the root of the project, you need to re-run `drupal:site-setup` in order to make
+sure they are be correctly symlinked.
+
+If you don't want to re-run a full site setup for that, you can simply run:
+
+```
+$ ./vendor/bin/run drupal:symlink-project
+```
+
+* Install test site by running:
+
+```bash
 docker-compose exec web ./vendor/bin/run drupal:site-install
 ```
 
