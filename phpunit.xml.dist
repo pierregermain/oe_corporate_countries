@@ -9,7 +9,7 @@
     <env name="SIMPLETEST_SPARQL_DB" value="sparql://${drupal.sparql.host}:${drupal.sparql.port}/?module=sparql_entity_storage"/>
   </php>
   <testsuites>
-    <testsuite name="OpenEuropa Corporate Countries">
+    <testsuite name="OpenEuropa Corporate Countries test suite">
       <directory>./tests/</directory>
     </testsuite>
   </testsuites>

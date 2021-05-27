@@ -15,7 +15,7 @@
         "composer/installers": "~1.5",
         "drupal/core-composer-scaffold": "^8.9 || ^9",
         "drupal/address": "^1.8",
-        "drupal/config_devel": "~1.8",
+        "drupal/config_devel": "~1.2",
         "drupal/drupal-extension": "~4.0",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "~1.6",
