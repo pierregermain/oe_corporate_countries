@@ -1,11 +1,21 @@
 # Changelog
 
+## [2.0.0-alpha3](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha3) (2021-07-01)
+
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha2...2.0.0-alpha3)
+
+**Merged pull requests:**
+
+- EWPP-914: Ensure drupal 9 compatibility. [\#19](https://github.com/openeuropa/oe_corporate_countries/pull/19) ([nagyad](https://github.com/nagyad))
+- EWPP-721: Update xdebug configuration. [\#15](https://github.com/openeuropa/oe_corporate_countries/pull/15) ([22Alexandra](https://github.com/22Alexandra))
+
 ## [2.0.0-alpha2](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha2) (2021-04-09)
 
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha1...2.0.0-alpha2)
 
 **Merged pull requests:**
 
+- Prepare release 2.0.0-alpha2. [\#18](https://github.com/openeuropa/oe_corporate_countries/pull/18) ([imanoleguskiza](https://github.com/imanoleguskiza))
 - EWPP-937: Add Kosovo to the list of countries. [\#17](https://github.com/openeuropa/oe_corporate_countries/pull/17) ([sergepavle](https://github.com/sergepavle))
 
 ## [2.0.0-alpha1](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha1) (2021-03-22)
@@ -14,6 +24,7 @@
 
 **Merged pull requests:**
 
+- Release 2.0.0-alpha1 [\#16](https://github.com/openeuropa/oe_corporate_countries/pull/16) ([imanoleguskiza](https://github.com/imanoleguskiza))
 - EWPP-529: Replace scaffold library. [\#13](https://github.com/openeuropa/oe_corporate_countries/pull/13) ([sergepavle](https://github.com/sergepavle))
 - OPENEUROPA-3048: Update rdf\_skos to use sparql storage. [\#7](https://github.com/openeuropa/oe_corporate_countries/pull/7) ([imanoleguskiza](https://github.com/imanoleguskiza))
 
