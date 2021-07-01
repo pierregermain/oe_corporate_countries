@@ -14,7 +14,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 /**
  * Implements hook_install().
  */
-function oe_corporate_countries_install() {
+function oe_corporate_countries_install($is_syncing) {
   // Install the newly defined SKOS Concept defined fields.
   $manager = \Drupal::entityDefinitionUpdateManager();
   $definition = BaseFieldDefinition::create('string')
@@ -25,7 +25,7 @@ function oe_corporate_countries_install() {
   $manager->installFieldStorageDefinition('deprecated', 'skos_concept', 'rdf_skos', $definition);
   \Drupal::logger('oe_content')->info('The following SKOS field definition has been installed: @definition.', ['@definition' => 'deprecated']);
 
-  if (\Drupal::service('config.installer')->isSyncing()) {
+  if ($is_syncing) {
     return;
   }
 
