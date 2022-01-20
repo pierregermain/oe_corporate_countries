@@ -11,6 +11,7 @@
   <testsuites>
     <testsuite name="OpenEuropa Corporate Countries test suite">
       <directory>./tests/</directory>
+      <directory>./modules/**/tests/</directory>
     </testsuite>
   </testsuites>
 </phpunit>
