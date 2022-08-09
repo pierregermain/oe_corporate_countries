@@ -73,7 +73,7 @@ class CountryRepository extends AddressCountryRepository {
   /**
    * {@inheritdoc}
    */
-  protected function loadDefinitions($locale) {
+  protected function loadDefinitions($locale): array {
     if (isset($this->definitions[$locale])) {
       return $this->definitions[$locale];
     }
