@@ -1,11 +1,20 @@
 # Changelog
 
-## [2.0.0-alpha5](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha5) (2022-07-29)
+## [2.0.0-alpha6](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha6) (2022-08-09)
+
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha5...2.0.0-alpha6)
+
+**Merged pull requests:**
+
+- EWPP: Declare return type after update of drupal/address. [\#26](https://github.com/openeuropa/oe_corporate_countries/pull/26) ([imanoleguskiza](https://github.com/imanoleguskiza))
+
+## [2.0.0-alpha5](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha5) (2022-08-02)
 
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha4...2.0.0-alpha5)
 
 **Merged pull requests:**
 
+- Prepare release 2.0.0-alpha5. [\#25](https://github.com/openeuropa/oe_corporate_countries/pull/25) ([imanoleguskiza](https://github.com/imanoleguskiza))
 - EWPP-2358: Drupal 9.4 support. [\#24](https://github.com/openeuropa/oe_corporate_countries/pull/24) ([yenyasinn](https://github.com/yenyasinn))
 
 ## [2.0.0-alpha4](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha4) (2022-02-10)
