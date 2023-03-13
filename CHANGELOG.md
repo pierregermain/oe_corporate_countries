@@ -1,11 +1,21 @@
 # Changelog
 
+## [2.0.0-alpha7](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha7) (2023-03-13)
+
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha6...2.0.0-alpha7)
+
+**Merged pull requests:**
+
+- EWPP-2994: Update dependencies. [\#31](https://github.com/openeuropa/oe_corporate_countries/pull/31) ([sergepavle](https://github.com/sergepavle))
+- OEL-2115: Update to PHP 8.1 [\#29](https://github.com/openeuropa/oe_corporate_countries/pull/29) ([brummbar](https://github.com/brummbar))
+
 ## [2.0.0-alpha6](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha6) (2022-08-09)
 
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha5...2.0.0-alpha6)
 
 **Merged pull requests:**
 
+- Prepare release 2.0.0-alpha6. [\#27](https://github.com/openeuropa/oe_corporate_countries/pull/27) ([imanoleguskiza](https://github.com/imanoleguskiza))
 - EWPP: Declare return type after update of drupal/address. [\#26](https://github.com/openeuropa/oe_corporate_countries/pull/26) ([imanoleguskiza](https://github.com/imanoleguskiza))
 
 ## [2.0.0-alpha5](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha5) (2022-08-02)
