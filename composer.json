@@ -8,7 +8,7 @@
     "require": {
         "php": ">=8.0",
         "drupal/core": "^9.4",
-        "openeuropa/rdf_skos": "1.x-dev"
+        "openeuropa/rdf_skos": "^1.0.0-alpha9"
     },
     "require-dev": {
         "composer/installers": "~1.5",
@@ -21,8 +21,8 @@
         "guzzlehttp/guzzle": "^7.0",
         "masterminds/html5": "^2.7.6",
         "mikey179/vfsstream": "^1.6.10",
-        "openeuropa/code-review": "2.x-dev",
-        "openeuropa/task-runner-drupal-project-symlink": "1.x-dev",
+        "openeuropa/code-review": "^2.0.0-alpha6",
+        "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
         "phpspec/prophecy-phpunit": "^2",
         "symfony/console": "^4.4.30",
         "symfony/css-selector": "^4.4.44",
