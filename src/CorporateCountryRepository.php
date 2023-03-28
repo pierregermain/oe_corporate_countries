@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\oe_corporate_countries;
 
 use Drupal\Component\Serialization\Json;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface;
 use Drupal\sparql_entity_storage\Entity\Query\Sparql\SparqlArg;
 use Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface;
@@ -29,16 +30,26 @@ class CorporateCountryRepository implements CorporateCountryRepositoryInterface 
   protected $sparql;
 
   /**
+   * The module extension list.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
+   */
+  protected ModuleExtensionList $moduleExtensionList;
+
+  /**
    * Instantiates a new CorporateCountryRepository object.
    *
    * @param \Drupal\sparql_entity_storage\SparqlEntityStorageGraphHandlerInterface $graphHandler
    *   The graph handler service.
    * @param \Drupal\sparql_entity_storage\Driver\Database\sparql\ConnectionInterface $sparql
    *   The SPARQL database connection.
+   * @param \Drupal\Core\Extension\ModuleExtensionList $moduleExtensionList
+   *   The module extension list.
    */
-  public function __construct(SparqlEntityStorageGraphHandlerInterface $graphHandler, ConnectionInterface $sparql) {
+  public function __construct(SparqlEntityStorageGraphHandlerInterface $graphHandler, ConnectionInterface $sparql, ModuleExtensionList $moduleExtensionList) {
     $this->graphHandler = $graphHandler;
     $this->sparql = $sparql;
+    $this->moduleExtensionList = $moduleExtensionList;
   }
 
   /**
@@ -123,7 +134,7 @@ SPARQL;
    *   The alpha-2 codes, keyed by OP authority code.
    */
   protected function getIsoCodeMappings(): array {
-    $filename = drupal_get_path('module', 'oe_corporate_countries') . '/resources/country-code-mappings.json';
+    $filename = $this->moduleExtensionList->getPath('oe_corporate_countries') . '/resources/country-code-mappings.json';
     $code_mappings = Json::decode(file_get_contents($filename));
 
     return is_array($code_mappings) ? $code_mappings : [];

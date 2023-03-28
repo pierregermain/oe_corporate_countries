@@ -16,7 +16,7 @@ class CountryRepositoryOverrideTest extends SparqlKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'address',
     'rdf_skos',
     'oe_corporate_countries',

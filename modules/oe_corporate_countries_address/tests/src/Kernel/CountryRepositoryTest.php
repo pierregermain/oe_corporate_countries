@@ -19,7 +19,7 @@ class CountryRepositoryTest extends CorporateCountriesRdfKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'language',
     'address',
     'oe_corporate_countries_address',

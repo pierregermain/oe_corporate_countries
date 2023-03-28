@@ -17,7 +17,7 @@ abstract class CorporateCountriesRdfKernelTestBase extends SparqlKernelTestBase 
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'rdf_skos',
     'oe_corporate_countries',
   ];
