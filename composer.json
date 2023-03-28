@@ -7,7 +7,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.0",
-        "drupal/core": "^9.4",
+        "drupal/core": "^9.4 || ^10",
         "openeuropa/rdf_skos": "^1.0.0-alpha9"
     },
     "require-dev": {
@@ -15,7 +15,7 @@
         "doctrine/collections": "^1.6.8",
         "drupal/address": "^1.11",
         "drupal/config_devel": "~1.2",
-        "drupal/core-composer-scaffold": "^9.4",
+        "drupal/core-composer-scaffold": "^9.4 || ^10",
         "drupal/drupal-extension": "dev-master as 4.0",
         "drush/drush": "^11.1",
         "guzzlehttp/guzzle": "^7.0",
