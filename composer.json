@@ -16,7 +16,6 @@
         "drupal/address": "^1.11",
         "drupal/config_devel": "~1.2",
         "drupal/core-composer-scaffold": "^9.4 || ^10",
-        "drupal/drupal-extension": "dev-master as 4.0",
         "drush/drush": "^11.1",
         "guzzlehttp/guzzle": "^7.0",
         "masterminds/html5": "^2.7.6",
@@ -71,7 +70,6 @@
             }
         },
         "_readme": [
-            "Use master branch of drupal/drupal-extension to replace fabpot/goutte with behat/mink-browserkit-driver.",
             "Explicit minimum version requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits.",
             "Explicit minimum version requirement of mikey179/vfsstream due to lower versions missing return type on vfsStreamDirectory::getIterator() method.",
             "Explicit minimum version requirement of guzzlehttp/guzzle due to lower versions missing return type on CookieJar::getIterator() and CookieJar::count() methods.",
