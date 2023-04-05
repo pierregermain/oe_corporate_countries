@@ -14,7 +14,7 @@ class CorporateCountrySubsetTest extends CorporateCountriesRdfKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'oe_corporate_countries',
     'entity_test',
     'user',
