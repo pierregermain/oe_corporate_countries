@@ -1,16 +1,22 @@
-# Changelog
+# Change Log
+
+## [2.0.0-alpha8](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha8) (2023-04-05)
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha7...2.0.0-alpha8)
+
+**Merged pull requests:**
+
+- EWPP-3002: Drupal 10 compatibility. [\#34](https://github.com/openeuropa/oe_corporate_countries/pull/34) ([brummbar](https://github.com/brummbar))
 
 ## [2.0.0-alpha7](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha7) (2023-03-13)
-
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha6...2.0.0-alpha7)
 
 **Merged pull requests:**
 
+- Prepare release 2.0.0-alpha7. [\#33](https://github.com/openeuropa/oe_corporate_countries/pull/33) ([sergepavle](https://github.com/sergepavle))
 - EWPP-2994: Update dependencies. [\#31](https://github.com/openeuropa/oe_corporate_countries/pull/31) ([sergepavle](https://github.com/sergepavle))
 - OEL-2115: Update to PHP 8.1 [\#29](https://github.com/openeuropa/oe_corporate_countries/pull/29) ([brummbar](https://github.com/brummbar))
 
 ## [2.0.0-alpha6](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha6) (2022-08-09)
-
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha5...2.0.0-alpha6)
 
 **Merged pull requests:**
