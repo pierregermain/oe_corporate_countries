@@ -5,7 +5,7 @@
  * Contains module hooks.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * Implements hook_field_info_alter().

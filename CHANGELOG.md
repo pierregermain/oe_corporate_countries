@@ -1,13 +1,28 @@
-# Change Log
+# Changelog
 
-## [2.0.0-alpha8](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha8) (2023-04-05)
+## [2.0.0](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0) (2024-02-15)
+
+[Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha8...2.0.0)
+
+**Closed issues:**
+
+- unable to enable oe\_content\_event [\#28](https://github.com/openeuropa/oe_corporate_countries/issues/28)
+
+**Merged pull requests:**
+
+- EWPP-3973: Add Drupal 10.2.x and PHP 8.2 to matrix. [\#36](https://github.com/openeuropa/oe_corporate_countries/pull/36) ([brummbar](https://github.com/brummbar))
+
+## [2.0.0-alpha8](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha8) (2023-04-06)
+
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha7...2.0.0-alpha8)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 2.0.0-alpha8. [\#35](https://github.com/openeuropa/oe_corporate_countries/pull/35) ([brummbar](https://github.com/brummbar))
 - EWPP-3002: Drupal 10 compatibility. [\#34](https://github.com/openeuropa/oe_corporate_countries/pull/34) ([brummbar](https://github.com/brummbar))
 
 ## [2.0.0-alpha7](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha7) (2023-03-13)
+
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha6...2.0.0-alpha7)
 
 **Merged pull requests:**
@@ -17,6 +32,7 @@
 - OEL-2115: Update to PHP 8.1 [\#29](https://github.com/openeuropa/oe_corporate_countries/pull/29) ([brummbar](https://github.com/brummbar))
 
 ## [2.0.0-alpha6](https://github.com/openeuropa/oe_corporate_countries/tree/2.0.0-alpha6) (2022-08-09)
+
 [Full Changelog](https://github.com/openeuropa/oe_corporate_countries/compare/2.0.0-alpha5...2.0.0-alpha6)
 
 **Merged pull requests:**
