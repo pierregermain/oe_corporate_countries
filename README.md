@@ -21,7 +21,7 @@ The main module offers a corporate countries repository service which returns th
 
 This depends on the following software:
 
-* [PHP >=7.2](http://php.net/)
+* [PHP >=8.1](http://php.net/)
 * Virtuoso (or equivalent) triple store which contains the RDF representations of the [Country](https://op.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/country) Publications Office (OP) vocabulary
 
 ## Installation

@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_corporate_countries\Kernel;
 
-use Drupal\Tests\sparql_entity_storage\Kernel\SparqlKernelTestBase;
 use Drupal\Tests\rdf_skos\Traits\SkosImportTrait;
+use Drupal\Tests\sparql_entity_storage\Kernel\SparqlKernelTestBase;
 
 /**
  * Abstract class for kernel tests with a test RDF country vocabulary.
