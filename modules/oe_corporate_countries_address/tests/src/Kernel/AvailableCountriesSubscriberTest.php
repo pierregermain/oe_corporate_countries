@@ -28,24 +28,20 @@ class AvailableCountriesSubscriberTest extends CorporateCountriesRdfKernelTestBa
    * Tests the deprecated countries are removed from the countries array.
    */
   public function testGetAvailableCountriesArray(): void {
-
-    $entityTypeName = 'entity_test';
-
-    FieldStorageConfig::create([
+    $field_storage = FieldStorageConfig::create([
       'field_name' => 'field_country',
       'entity_type' => 'entity_test',
       'type' => 'address_country',
-    ])->save();
+    ]);
+    $field_storage->save();
 
     FieldConfig::create([
-      'label' => 'My field',
-      'field_name' => 'field_country',
-      'entity_type' => 'entity_test',
+      'field_storage' => $field_storage,
       'bundle' => 'entity_test',
+      'label' => 'My field',
     ])->save();
 
     // Get the actual countries from field.
-    // This shouldn't have the deprecated countries.
     $entity = EntityTest::create();
     $actual_countries = $entity->get('field_country')
       ->appendItem()
@@ -60,20 +56,9 @@ class AvailableCountriesSubscriberTest extends CorporateCountriesRdfKernelTestBa
       'IT' => 'IT',
     ];
 
-    // Assert explicitly that the actual countries format is correctly formated.
-    foreach ($actual_countries as $key => $value) {
-      $this->assertArrayHasKey($key, $expected_countries, 'Key ' . ' has been found');
-    }
-
-    // Assert explicitly that the actual countries array is correctly keyed.
-    $expected_keys = array_keys($expected_countries);
-    $actual_keys = array_keys($actual_countries);
-    sort($expected_keys);
-    sort($actual_keys);
-    $this->assertEquals($expected_keys, $actual_keys, 'The actual countries array is correctly keyed');
-
-    // Assert explicitly actual countries against a deprecated country.
-    $this->assertArrayNotHasKey('AN', $actual_countries, 'The deprecated country "AN" is not present in actual_countries array');
+    // Assert that the actual countries array is correctly keyed.
+    $this->assertEquals($expected_countries, $actual_countries);
+    // Assert that the actual countries do not contain deprecated countries.
+    $this->assertNotContains('AN', $actual_countries);
   }
-
 }
